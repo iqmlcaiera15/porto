@@ -720,6 +720,12 @@
                             {{ session('success') }}
                         </div>
                     @endif
+                    @if(session('error'))
+                        <div class="alert alert-danger rounded-3 d-flex align-items-center mb-4">
+                            <i class="fas fa-exclamation-circle me-2"></i>
+                            {{ session('error') }}
+                        </div>
+                    @endif
                     
                     <form action="{{ route('contact.send', [], false) }}" method="POST">
                         @csrf
