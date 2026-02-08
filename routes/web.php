@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PortfolioController;
 use App\Http\Controllers\ContactController;
 
-Route::get('/', function () {
+Route::get('/portfolio', function () {
     return view('welcome');
 });
 

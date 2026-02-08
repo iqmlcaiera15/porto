@@ -51,28 +51,28 @@ class PortfolioController extends Controller
                 'title' => 'SEHATI App',
                 'description' => 'Aplikasi Kesehatan Ibu hamil dengan berbagai fitur inovasi',
                 'tech' => ['Laravel', 'MySQL', 'Flutter', 'UML', 'AWS', 'Flask','Railway Deploy Service'],
-                'image' => 'https://amazon-datazone-sehatiapp.s3.ap-southeast-1.amazonaws.com/public/images/Sehati.jpg',
+                'image' => 'https://porto-bucket-php.s3.ap-southeast-2.amazonaws.com/images/Sehati.jpg',
                 'link' => 'https://sehatiapp-production.up.railway.app/'
             ],
             [
                 'title' => 'Stacking Machine Learning',
                 'description' => 'Pelatihan machine learning dengan 2 machine learning dalam 1 meta model',
                 'tech' => ['XGBoost', 'Random Forest', 'Machine Learning'],
-                'image' => 'https://amazon-datazone-sehatiapp.s3.ap-southeast-1.amazonaws.com/public/paperr.png',
+                'image' => 'https://porto-bucket-php.s3.ap-southeast-2.amazonaws.com/paperr.png',
                 'link' => 'https://amazon-datazone-sehatiapp.s3.ap-southeast-1.amazonaws.com/public/Paper.pdf'
             ],
             [
                 'title' => 'Design System Aplikasi Internal',
                 'description' => 'Design system internal perusahaan untuk berbagai aplikasi internal',
                 'tech' => ['Figma'],
-                'image' => 'https://amazon-datazone-sehatiapp.s3.ap-southeast-1.amazonaws.com/public/images/Design.png',
+                'image' => 'https://porto-bucket-php.s3.ap-southeast-2.amazonaws.com/Design.png',
                 'link' => '#'
             ],
             [
                 'title' => 'Test Case Production Dummy',
                 'description' => 'Contoh TCP Dummy dengan bug report manual',
                 'tech' => ['-'],
-                'image' => 'https://amazon-datazone-sehatiapp.s3.ap-southeast-1.amazonaws.com/public/images/tcp.png',
+                'image' => 'https://porto-bucket-php.s3.ap-southeast-2.amazonaws.com/images/tcp.png',
                 'link' => 'https://amazon-datazone-sehatiapp.s3.ap-southeast-1.amazonaws.com/public/TCP.xlsx'
             ],
 

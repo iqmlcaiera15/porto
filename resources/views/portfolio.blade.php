@@ -188,7 +188,7 @@
                         </li>
                     </ul>
                     
-                    <a href="https://amazon-datazone-sehatiapp.s3.ap-southeast-1.amazonaws.com/public/CV.pdf" class="btn btn-primary w-100 rounded-pill mt-4 hover-lift">
+                    <a href="https://porto-bucket-php.s3.ap-southeast-2.amazonaws.com/Iqmal+Nuriadi-CV.pdf" class="btn btn-primary w-100 rounded-pill mt-4 hover-lift">
                         <i class="fas fa-download me-2"></i>Download CV
                     </a>
                 </div>
@@ -721,7 +721,7 @@
                         </div>
                     @endif
                     
-                    <form action="{{ route('contact.send') }}" method="POST">
+                    <form action="{{ route('contact.send', [], false) }}" method="POST">
                         @csrf
                         <div class="mb-4">
                             <label for="nama" class="form-label fw-semibold text-muted small text-uppercase" style="letter-spacing: 0.5px;">Nama Anda</label>
@@ -1148,6 +1148,15 @@ h1, h2, h3, h4, h5, h6 {
 .contact-card {
     background: rgba(255, 255, 255, 0.16);
     border: 1px solid rgba(255, 255, 255, 0.2);
+}
+
+.contact-card .icon-box-large {
+    background: rgba(255, 255, 255, 0.9) !important;
+    border: 1px solid rgba(255, 255, 255, 0.85);
+}
+
+.contact-card .icon-box-large i {
+    color: var(--primary-color);
 }
 
 .contact-form-wrapper {
