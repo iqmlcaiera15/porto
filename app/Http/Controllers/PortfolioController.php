@@ -75,6 +75,14 @@ class PortfolioController extends Controller
                 'image' => 'https://amazon-datazone-sehatiapp.s3.ap-southeast-1.amazonaws.com/public/images/tcp.png',
                 'link' => 'https://amazon-datazone-sehatiapp.s3.ap-southeast-1.amazonaws.com/public/TCP.xlsx'
             ],
+
+            [
+                'title' => 'n8n AI Tele Bot',
+                'description' => 'Contoh TCP Dummy dengan bug report manual',
+                'tech' => ['-'],
+                'image' => 'https://amazon-datazone-sehatiapp.s3.ap-southeast-1.amazonaws.com/public/images/tcp.png',
+                'link' => 'https://amazon-datazone-sehatiapp.s3.ap-southeast-1.amazonaws.com/public/TCP.xlsx'
+            ],
             
         ];
         

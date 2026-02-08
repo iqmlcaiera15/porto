@@ -69,11 +69,53 @@
 
         .navbar {
             transition: all 0.3s ease;
+            padding: 0.85rem 0;
+            border-bottom: 1px solid transparent;
         }
 
         .navbar-scrolled {
-            background: rgba(44, 62, 80, 0.95) !important;
-            backdrop-filter: blur(10px);
+            background: rgba(16, 26, 39, 0.88) !important;
+            backdrop-filter: blur(14px);
+            border-bottom-color: rgba(255, 255, 255, 0.12);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.2);
+        }
+
+        .navbar .navbar-brand {
+            font-weight: 700;
+            letter-spacing: 0.4px;
+        }
+
+        .navbar .navbar-brand span {
+            color: var(--secondary-color);
+        }
+
+        .navbar .nav-link {
+            font-weight: 600;
+            color: rgba(255, 255, 255, 0.82);
+            padding: 0.5rem 0.9rem;
+            border-radius: 999px;
+            transition: all 0.2s ease;
+        }
+
+        .navbar .nav-link:hover,
+        .navbar .nav-link:focus {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.12);
+        }
+
+        .navbar .nav-link.active {
+            color: #ffffff;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: inset 0 0 0 1px rgba(255, 255, 255, 0.2);
+        }
+
+        .navbar-toggler {
+            border: 1px solid rgba(255, 255, 255, 0.35);
+            padding: 0.35rem 0.6rem;
+        }
+
+        .navbar-toggler:focus {
+            box-shadow: 0 0 0 0.2rem rgba(52, 152, 219, 0.35);
         }
 
         .btn-primary {
@@ -103,28 +145,35 @@
 </head>
 <body>
     <!-- Navigation -->
+    @php
+        $onPortfolio = request()->routeIs('portfolio');
+        $onProyek = request()->routeIs('proyek');
+        $portfolioBase = route('portfolio');
+    @endphp
     <nav class="navbar navbar-expand-lg navbar-dark fixed-top" style="background: transparent;">
         <div class="container">
-            <a class="navbar-brand fw-bold" href="#home">Portfolio Iqmal Nuriadi</a>
+            <a class="navbar-brand fw-bold" href="{{ $onPortfolio ? '#home' : $portfolioBase . '#home' }}">
+                Portfolio <span>Iqmal</span>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
                 <ul class="navbar-nav ms-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="#home">Beranda</a>
+                        <a class="nav-link {{ $onPortfolio ? 'active' : '' }}" href="{{ $onPortfolio ? '#home' : $portfolioBase . '#home' }}">Beranda</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#about">Tentang</a>
+                        <a class="nav-link" href="{{ $onPortfolio ? '#about' : $portfolioBase . '#about' }}">Tentang</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#skills">Keahlian</a>
+                        <a class="nav-link" href="{{ $onPortfolio ? '#skills' : $portfolioBase . '#skills' }}">Keahlian</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="/proyek">Proyek</a>
+                        <a class="nav-link {{ $onProyek ? 'active' : '' }}" href="{{ route('proyek') }}">Proyek</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#contact">Kontak</a>
+                        <a class="nav-link" href="{{ $onPortfolio ? '#contact' : $portfolioBase . '#contact' }}">Kontak</a>
                     </li>
                 </ul>
             </div>
