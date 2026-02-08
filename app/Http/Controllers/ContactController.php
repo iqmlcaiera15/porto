@@ -63,6 +63,11 @@ class ContactController extends Controller
             return back()->with('error', 'Gagal mengirim pesan. Silakan coba lagi.');
         }
 
+        Log::info('Brevo send ok', [
+            'status' => $response->status(),
+            'body' => $response->json(),
+        ]);
+
         return back()->with('success', 'Pesan berhasil dikirim! Terima kasih.');
     }
 }
