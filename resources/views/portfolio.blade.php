@@ -11,9 +11,6 @@
         <div class="row align-items-center" style="min-height: 100vh; padding: 120px 0;">
             <div class="col-lg-6 mb-5 mb-lg-0 ps-lg-5">
                 <div class="hero-content" data-aos="fade-right">
-                    <span class="badge bg-white bg-opacity-20 text-white px-4 py-3 mb-4 rounded-pill fw-semibold" style="font-size: 1rem; backdrop-filter: blur(10px);">
-                        <i class="fas fa-circle text-success me-2" style="font-size: 0.5rem;"></i>Available for Work
-                    </span>
                     <h1 class="hero-title fw-bold mb-4" style="font-size: clamp(2.5rem, 5vw, 4.5rem); line-height: 1.2;">
                         Halo, Saya <br>
                         <span class="gradient-text-hero">Iqmal Nuriadi</span>
