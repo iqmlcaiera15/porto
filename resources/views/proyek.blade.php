@@ -58,23 +58,29 @@
                                 </span>
                             @endforeach
                         </div>
-                        <button
-                            type="button"
-                            class="btn btn-primary w-100 rounded-pill btn-lg"
-                            data-bs-toggle="modal"
-                            data-bs-target="#projectDetailModal"
-                            data-title="{{ $project['title'] }}"
-                            data-description="{{ $project['description'] }}"
-                            data-image="{{ $project['image'] ?? '' }}"
-                            data-tech='@json($project["tech"])'
-                            data-role="Quality Assurance Specialist"
-                            data-duration="3 Bulan"
-                            data-highlights='@json(["Menyusun test scenario & case untuk UAT/SIT","Membuat data prep untuk kebutuhan testing","Kolaborasi lintas tim untuk bug triage"])'
-                            data-result="Kualitas rilis meningkat dan defect kritikal berkurang."
-                            data-link="{{ $project['link'] ?? '#' }}"
-                        >
-                            <i class="fas fa-arrow-right me-2"></i>Lihat Detail
-                        </button>
+                        @if(!empty($project['disabled']))
+                            <button type="button" class="btn btn-outline-secondary w-100 rounded-pill btn-lg" disabled>
+                                <i class="fas fa-lock me-2"></i>Tidak Tersedia
+                            </button>
+                        @else
+                            <button
+                                type="button"
+                                class="btn btn-primary w-100 rounded-pill btn-lg"
+                                data-bs-toggle="modal"
+                                data-bs-target="#projectDetailModal"
+                                data-title="{{ $project['title'] }}"
+                                data-description="{{ $project['description'] }}"
+                                data-image="{{ $project['image'] ?? '' }}"
+                                data-tech='@json($project["tech"])'
+                            data-role="{{ $project['role'] ?? 'Quality Assurance Specialist' }}"
+                            data-duration="{{ $project['duration'] ?? '3 Bulan' }}"
+                            data-highlights='@json($project["highlights"] ?? ["Menyusun test scenario & case untuk UAT/SIT","Membuat data prep untuk kebutuhan testing","Kolaborasi lintas tim untuk bug triage"])'
+                            data-result="{{ $project['result'] ?? 'Kualitas rilis meningkat dan defect kritikal berkurang.' }}"
+                                data-link="{{ $project['link'] ?? '#' }}"
+                            >
+                                <i class="fas fa-arrow-right me-2"></i>Lihat Detail
+                            </button>
+                        @endif
                     </div>
                 </div>
             </div>
