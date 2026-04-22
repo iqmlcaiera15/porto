@@ -8,26 +8,33 @@
 <!-- Hero Section -->
 <section id="projects-hero" class="hero-section position-relative overflow-hidden">
     <div class="hero-gradient"></div>
-    <div class="container position-relative" style="z-index: 2;">
-        <div class="row align-items-center min-vh-60 py-5">
+    <div class="hero-particles"></div>
+    <div class="container-fluid px-lg-5 position-relative" style="z-index: 2;">
+        <div class="row align-items-center justify-content-center" style="min-height: 100vh; padding: 120px 0;">
             <div class="col-lg-8 mx-auto text-center" data-aos="fade-up">
-                <span class="badge bg-primary bg-opacity-10 text-white border border-white border-opacity-25 px-3 py-2 mb-3 rounded-pill">
+                <span class="badge bg-primary bg-opacity-10 text-white border border-white border-opacity-25 px-3 py-2 mb-3 rounded-pill text-uppercase letter-spacing-1">
                     <i class="fas fa-layer-group me-2"></i>Selected Work
                 </span>
-                <h1 class="display-4 fw-bold mb-3">Proyek yang Pernah Saya Kerjakan</h1>
-                <p class="lead mb-4 text-white-50">
+                <h1 class="display-4 fw-bold mb-3 hero-title">Proyek yang Pernah Saya Kerjakan</h1>
+                <p class="lead mb-4 text-white-50 hero-subtitle">
                     Kumpulan proyek yang menunjukkan pengalaman saya dalam analisis, pengujian, dan pengembangan solusi digital.
                 </p>
-                <a href="#projects" class="btn btn-light btn-lg rounded-pill px-4 hover-lift">
+                <a href="#projects" class="btn btn-light btn-lg rounded-pill px-5 py-3 hover-lift fw-semibold">
                     <i class="fas fa-arrow-down me-2"></i>Lihat Proyek
                 </a>
             </div>
         </div>
     </div>
+    <div class="scroll-indicator" data-aos="fade-up" data-aos-delay="300">
+        <a href="#projects" class="text-white text-decoration-none">
+            <div class="mouse"></div>
+            <p class="mt-3 small fw-semibold">Scroll Down</p>
+        </a>
+    </div>
 </section>
 
 <!-- Projects Section -->
-<section id="projects" class="section-padding bg-light">
+<section id="projects" class="section-padding section-surface">
     <div class="container">
         <div class="text-center mb-5" data-aos="fade-up">
             <span class="text-primary fw-semibold text-uppercase letter-spacing-1">Portofolio</span>
@@ -152,6 +159,9 @@
     --danger-color: #ef476f;
     --dark-color: #1a1a2e;
     --light-color: #f8f9fa;
+    --page-bg: #e8f1ff;
+    --section-bg: #dbeafe;
+    --card-bg: #f7fbff;
 }
 
 .section-padding {
@@ -163,10 +173,7 @@
     background: linear-gradient(135deg, #1e88e5 0%, #1565c0 100%);
     color: white;
     position: relative;
-}
-
-.min-vh-60 {
-    min-height: 60vh;
+    overflow: hidden;
 }
 
 .hero-gradient {
@@ -180,13 +187,44 @@
         radial-gradient(circle at 80% 80%, rgba(255,255,255,0.1) 0%, transparent 50%);
 }
 
+.hero-particles {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-image:
+        radial-gradient(2px 2px at 20% 30%, rgba(255,255,255,0.3), transparent),
+        radial-gradient(2px 2px at 60% 70%, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 50% 50%, rgba(255,255,255,0.3), transparent),
+        radial-gradient(1px 1px at 80% 10%, rgba(255,255,255,0.3), transparent),
+        radial-gradient(2px 2px at 90% 60%, rgba(255,255,255,0.3), transparent);
+    background-size: 200% 200%;
+    background-position: 50% 50%;
+    animation: particles 20s ease-in-out infinite;
+}
+
+@keyframes particles {
+    0%, 100% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+}
+
+.hero-title {
+    text-shadow: 2px 4px 8px rgba(0,0,0,0.2);
+}
+
+.hero-subtitle {
+    text-shadow: 1px 2px 4px rgba(0,0,0,0.1);
+}
+
 .letter-spacing-1 {
     letter-spacing: 1px;
 }
 
 /* Readability */
 body {
-    font-size: 1.05rem;
+    font-size: 1.12rem;
+    background: var(--page-bg);
 }
 
 p,
@@ -196,7 +234,48 @@ p,
 }
 
 .lead {
-    font-size: 1.2rem;
+    font-size: 1.28rem;
+}
+
+.section-surface {
+    background: var(--section-bg);
+}
+
+/* Scroll Indicator */
+.scroll-indicator {
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    text-align: center;
+    z-index: 10;
+}
+
+.mouse {
+    width: 30px;
+    height: 50px;
+    border: 2px solid rgba(255,255,255,0.5);
+    border-radius: 20px;
+    position: relative;
+    margin: 0 auto;
+}
+
+.mouse::before {
+    content: '';
+    width: 6px;
+    height: 6px;
+    background: white;
+    border-radius: 50%;
+    position: absolute;
+    top: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    animation: scroll 2s infinite;
+}
+
+@keyframes scroll {
+    0% { top: 10px; opacity: 1; }
+    100% { top: 30px; opacity: 0; }
 }
 
 /* Project Cards */
@@ -204,7 +283,7 @@ p,
     transition: all 0.3s ease;
     border: 1px solid rgba(30, 136, 229, 0.12);
     overflow: hidden;
-    background: linear-gradient(180deg, #ffffff 0%, #f6f8ff 100%);
+    background: linear-gradient(180deg, #ffffff 0%, var(--card-bg) 100%);
 }
 
 .project-image-wrapper {
@@ -289,7 +368,7 @@ p,
 }
 
 .project-modal-card {
-    background: #f6f8ff;
+    background: var(--card-bg);
     border: 1px solid rgba(30, 136, 229, 0.12);
 }
 
