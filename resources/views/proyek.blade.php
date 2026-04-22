@@ -4,6 +4,37 @@
 
 @section('content')
 
+<!-- Navigation -->
+<nav class="navbar navbar-expand-lg navbar-light fixed-top glass-nav">
+    <div class="container">
+        <a class="navbar-brand fw-bold" href="#">
+            <span style="background: linear-gradient(135deg, #1e88e5 0%, #6366f1 100%); -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text; font-size: 1.3rem;">
+                <i class="fas fa-briefcase me-1" style="color: #1e88e5;"></i> Portfolio
+            </span>
+        </a>
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ms-auto">
+                <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#about">Tentang</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#experience">Pengalaman</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#skills">Keahlian</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#certifications">Sertifikasi</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#publications">Penelitian</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#services">Layanan</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#languages">Bahasa</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#achievements">Pencapaian</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#faq">FAQ</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#interests">Minat</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#education">Pendidikan</a></li>
+                <li class="nav-item"><a class="nav-link" href="/#contact">Kontak</a></li>
+                <li class="nav-item"><a class="nav-link active" href="/proyek">Proyek</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
 
 <!-- Hero Section -->
 <section id="projects-hero" class="hero-section position-relative overflow-hidden">
